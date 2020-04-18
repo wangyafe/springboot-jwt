@@ -1,5 +1,7 @@
 package com.pjb.springbootjjwt.api;
 
+import com.pjb.springbootjjwt.annotation.Permission;
+import com.pjb.springbootjjwt.annotation.UserLoginToken;
 import com.pjb.springbootjjwt.entity.OrderInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +15,11 @@ import java.util.Date;
  * @create: 2020-04-15 19:03
  **/
 @RestController
+@RequestMapping("/api")
 public class TeController {
+
+    @UserLoginToken
+    @Permission
     @RequestMapping("/timeTest")
     public OrderInfo timeTest() {
         OrderInfo order = new OrderInfo();
